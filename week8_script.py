@@ -22,6 +22,12 @@ wine_data = load_wine()
 
 import pandas as pd
 
-wine_df = pd.DataFrame(data=wine_data[1], columns = wine_data[4])
+wine_df = pd.DataFrame(data=wine_data['data'])
+wine_df.columns = wine_data['feature_names']
+#wine_df['Class = "C"+wine_df.iloc[:,0]
 print(wine_df)
+print(wine_df.columns)
 
+
+## need to lookup how to merge target into dataframe and then replace values 
+## of target with names to fix labels.
